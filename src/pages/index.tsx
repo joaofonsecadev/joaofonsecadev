@@ -1,5 +1,7 @@
-import React from "react"
+import React from "react";
+import { Layout } from '../components/Layout';
+import "../styles/styles.scss";
 
-export default function Home() {
-  return <div>Hello world!</div>
+export default function WebIndex() {
+	return (<h1>Hello World!</h1>);
 }
