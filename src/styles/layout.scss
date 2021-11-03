@@ -1,16 +1,21 @@
+@import './_themeDark.scss';
+
 $navbarWidth: 80px;
+$footerHeight: 28px;
+$headerHeight: 35px;
 
 main {
     margin-left: $navbarWidth;
+    margin-top: $headerHeight;
 }
 
 .navbar {
-    height: 100vh;
+    height: calc(100vh - $footerHeight);
     min-width: $navbarWidth;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgb(46, 46, 46);
+    background: $backgroundNavbar;
     display: flex;
 
     a {
@@ -18,6 +23,16 @@ main {
         display: flex;
         justify-content: center;
         padding: 1rem;
+
+        &.active {
+            background: $navHover;
+            border-left: 3px solid $accent;
+            outline: none;
+        }
+
+        &:hover {
+            background: $navHover;
+        }
     }
 
     img {
@@ -30,5 +45,62 @@ main {
         flex-direction: column;
         justify-content: space-between;
         width: 100%;
+    }
+}
+
+.web-header {
+    display: flex;
+    justify-content: flex-start;
+    height: $headerHeight;
+    position: fixed;
+    top: 0;
+    left: $navbarWidth;
+    width: calc(100vw - $navbarWidth);
+    background: $backgroundTabs;
+
+    .header-name {
+        display: flex;
+        align-items: center;
+        background: $background;
+        color: white;
+        border-top: 3px solid $accent;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        font-size: .9rem;
+        padding: 0 1rem;
+        position: relative;
+        top: 0;
+        left: $footerHeight;
+    }
+}
+
+.footer {
+    height: $footerHeight;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: $backgroundTabs;
+
+    section {
+        align-items: stretch;
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+    }
+
+    nav {
+        display: flex;
+        gap: 0.25rem;
+        margin: 0 1rem;
+    }
+
+    span {
+        color: white;
+        align-items: center;
+        font-size: .8rem;
+        line-height: $footerHeight;
+        padding: 0 .5rem;
     }
 }

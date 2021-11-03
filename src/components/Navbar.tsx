@@ -17,11 +17,9 @@ export const Navbar = () => {
             <section>
                 <nav>
                     {menuItems.map((item) => (
-                        <>
                         <Link to={item.url} key={item.label} activeClassName="active">
                             <img src={item.icon} alt={item.label} />
                         </Link>
-                        </>
                     ))}
                 </nav>
             </section>
