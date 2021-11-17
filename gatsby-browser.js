@@ -1,13 +1,9 @@
 import React from 'react';
-import { Layout } from './src/components/Layout'
+import Layout from './src/components/Layout';
 
-import './src/styles/layout.scss'
-import "./src/styles/styles.scss";
+import './src/styles/layout.scss';
+import './src/styles/styles.scss';
 
-export function wrapPageElement({element, props}) {
-    return (
-        <Layout>
-            {element}
-        </Layout>
-    );
+export function wrapPageElement({ element, props }) {
+  return <Layout>{element}</Layout>;
 }

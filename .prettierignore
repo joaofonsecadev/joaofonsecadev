@@ -2,3 +2,9 @@
 package.json
 package-lock.json
 public
+README.md
+tsconfig.json
+gatsby-browser.js
+gatsby-config.js
+.eslintrc.js
+.prettierrc.js
