@@ -1,12 +1,88 @@
 @import './_themeDark.scss';
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=Inter:wght@400;700&display=swap');
+
+$fontHeading: -apple-system,BlinkMacSystemFont,"Helvetica Neue","Roboto",Roboto,Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+$fontMain: -apple-system,BlinkMacSystemFont,"Inter","Helvetica Neue","Roboto",Roboto,Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+$fontCode: Menlo,"DM Mono","Roboto Mono",Courier New,monospace;
+
+* {
+    box-sizing: border-box;
+}
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: $fontMain;
     background-color: $background;
     color: $fontText;
+    line-height: 1.6;
 }
 
 a {
     text-decoration: none;
+
+    &.button {
+        background: $accent;
+        border: 1px solid $accent!important;
+        color: $fontTextBrightInvert;
+        display: block;
+        padding: 0.5rem 1rem;
+
+        &:hover {
+            filter: brightness(1.1)
+        }
+    }
+}
+
+p {
+    font-size: 1.18rem;
+    margin: 0 0 2rem;
+}
+
+h1 {
+    color: $accent;
+    font-family: $fontHeading;
+    line-height: 1.2;
+    margin: 0 0 1.5rem;
+    scroll-margin-top: 60px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+article {
+    h1 {
+        color: $fontTextBright;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+    }
+}
+
+.hero {
+    h1 {
+        color: $fontTextBright;
+        font-size: 3.2rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        &.subtitle {
+            color: $fontText;
+            font-size: 1.4rem;
+        }
+    }
+
+    .hero-buttons {
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+    }
+}
+
+.container {
+    &.small {
+        
+    }
+    .small {
+        max-width: 550px;
+    }
 }

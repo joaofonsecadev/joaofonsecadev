@@ -11,6 +11,7 @@ module.exports = {
     'limited-exports-page-templates': 'warn',
     'react/function-component-definition': 'off',
     'react/prop-types': 'warn',
+    'react/jsx-one-expression-per-line': 'off',
   },
   ignorePatterns: ['gatsby-browser.js'],
 };

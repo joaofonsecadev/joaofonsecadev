@@ -9,6 +9,43 @@ main {
     margin-top: $headerHeight;
 }
 
+article {
+    margin-bottom: 3rem;
+
+    header {
+        text-align: center;
+    }
+
+    a {
+        font-weight: 600;
+        color: $fontTextBright;
+        border-top: 2px solid transparent;
+        border-bottom: 2px solid $accent;
+
+        &:hover {
+            font-weight: 600;
+            background: $accent;
+            color: $fontTextBrightInvert;
+            border-top: 2px solid $accent;
+            border-bottom: 2px solid $accent;
+        }
+    }
+}
+
+.hero {
+    header {
+        padding: 2rem 0 0;
+        text-align: left;
+    }
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    padding: 2rem;
+}
+
 .navbar {
     height: calc(100vh - $footerHeight);
     min-width: $navbarWidth;
