@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import book from '../assets/book.png';
-import scroll from '../assets/scroll.png';
-import helmet from '../assets/helmet.png';
+import projectsIcon from '../assets/book.png';
+import articlesIcon from '../assets/scroll.png';
+import aboutIcon from '../assets/helmet.png';
 
 const menuItems = [
-  { url: '/articles', icon: scroll, label: 'Articles' },
-  { url: '/projects', icon: book, label: 'Projects' },
-  { url: '/about', icon: helmet, label: 'About Me' },
+  { url: '/articles', icon: articlesIcon, label: 'Articles' },
+  { url: '/projects', icon: projectsIcon, label: 'Projects' },
+  { url: '/about', icon: aboutIcon, label: 'About Me' },
 ];
 
 export default function Navbar() {
