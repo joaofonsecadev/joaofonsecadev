@@ -19,5 +19,22 @@ module.exports = {
         exclude: ['node_modules', 'bower_components', '.cache', 'public'],
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/content/`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        footnotes: true,
+        gfm: true,
+        plugins: [
+          'gatsby-remark-autolink-headers'
+        ],
+      },
+    },
   ],
 };
