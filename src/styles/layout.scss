@@ -30,6 +30,12 @@ article {
             border-bottom: 2px solid $accent;
         }
     }
+
+    .description {
+        color: $fontTextDark;
+        font-size: 1.4rem;
+        margin-bottom: 0;
+    }
 }
 
 .hero {
@@ -107,7 +113,7 @@ article {
         padding: 0 1rem;
         position: relative;
         top: 0;
-        left: $footerHeight;
+        left: $headerHeight * 1.5;
     }
 }
 

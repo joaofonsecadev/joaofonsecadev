@@ -2,11 +2,12 @@ import React from 'react';
 // import { Link } from 'gatsby';
 import Helmet from 'react-helmet';
 import SEO from '../components/SEO';
+import SiteConfig from '../utils/config';
 
 export default function WebIndex() {
   return (
     <>
-      <Helmet title="João Fonseca" />
+      <Helmet title={`${SiteConfig.title} - Game Developer`} />
       <SEO />
       <article className="hero">
         <header>
