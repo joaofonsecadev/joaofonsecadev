@@ -14,9 +14,13 @@ export default function WebIndex() {
           <div className="container">
             <h1>Hey, I&apos;m João.</h1>
             <p className="subtitle small">
-              I&apos;m a <strong>game developer</strong> from <strong>Lisbon, Portugal</strong>
-              . Working as an Automation Test Engineer at Funcom, for the{' '}
-              <a href="https://pr.funcom.com/Unannounced-Dune-survival-game" target="_blank" rel="noreferrer">
+              I&apos;m a <strong>game developer</strong> from <strong>Lisbon, Portugal</strong>.
+              Working as an Automation Test Engineer at Funcom, for the{' '}
+              <a
+                href="https://pr.funcom.com/Unannounced-Dune-survival-game"
+                target="_blank"
+                rel="noreferrer"
+              >
                 open-world survival Dune game.
               </a>
             </p>
