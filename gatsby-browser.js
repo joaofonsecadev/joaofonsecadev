@@ -1,7 +1,6 @@
 import React from 'react';
 import Layout from './src/components/Layout';
 
-import './src/styles/layout.scss';
 import './src/styles/styles.scss';
 
 export function wrapPageElement({ element, props }) {

@@ -1,18 +1,50 @@
-@import './_themeDark.scss';
+// @import './_themeDark.scss';
+@import './_themeMidnight.scss';
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto+Mono&display=swap');
+
+$fontFamily: "Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue","Roboto",Roboto,Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 $fontHeading: -apple-system,BlinkMacSystemFont,"Helvetica Neue","Roboto",Roboto,Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-$fontMain: -apple-system,BlinkMacSystemFont,"Inter","Helvetica Neue","Roboto",Roboto,Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-$fontCode: Menlo,"DM Mono","Roboto Mono",Courier New,monospace;
+$fontPost: -apple-system,BlinkMacSystemFont,"Helvetica Neue","Roboto",Roboto,Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+$fontCode: Menlo,"Roboto Mono",Courier New,monospace;
+
+$pageWidth: 850px;
+$navbarWidth: 80px;
+$navbarHeight: 60px;
+$footerHeight: 28px;
+$headerHeight: 35px;
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: $fontMain;
+    -webkit-font-smoothing: antialiased;
+    font-family: $fontFamily;
     background-color: $background;
     color: $fontText;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+main {
+    background: $background;
+    margin-top: $navbarHeight;
+    min-height: calc(100vh - 215px);
+}
+
+h1 {
+    color: $accent;
+    font-family: $fontHeading;
+    line-height: 1.2;
+    margin: 0 0 1.5rem;
+    scroll-margin-top: 60px;
+}
+
+blockquote, ol, p, table, ul {
+    color: $fontText;
+    font-size: 1.1rem;
+    margin: 0 0 2rem;
 }
 
 a {
@@ -31,58 +63,231 @@ a {
     }
 }
 
-p {
-    font-size: 1.18rem;
-    margin: 0 0 2rem;
-}
+article {
+    padding-bottom: 3rem;
 
-h1 {
-    color: $accent;
-    font-family: $fontHeading;
-    line-height: 1.2;
-    margin: 0 0 1.5rem;
-    scroll-margin-top: 60px;
+    h1 {
+        color: $fontTextBright;
+        font-size: 2.6rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+    }
+
+    header {
+        padding-top: 2rem;
+        text-align: center;
+    }
+
+    a {
+        font-weight: 600;
+        color: $fontTextBright;
+        border-top: 2px solid transparent;
+        border-bottom: 2px solid $accent;
+
+        &:hover {
+            font-weight: 600;
+            background: $accent;
+            color: $fontTextBrightInvert;
+            border-top: 2px solid $accent;
+            border-bottom: 2px solid $accent;
+        }
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
+
+    .description {
+        color: $fontTextDark;
+        font-size: 1.4rem;
+        margin-bottom: 0;
+    }
 }
 
 strong {
     font-weight: bold;
 }
 
-article {
-    h1 {
-        color: $fontTextBright;
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 0.75rem;
+.flex-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.navigation {
+    background: $backgroundNavbar;
+    border-bottom: 1px solid $borderLight;
+    height: $navbarHeight;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+
+    nav {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        gap: 0.6rem;
+        height: 100%;
+
+        a {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            border-radius: 8px;
+            color: $fontText;
+            font-size: .9rem;
+            font-weight: 500;
+            gap: 0.4rem;
+            line-height: 1.1;
+            padding: 0.5rem;
+
+            &:hover {
+                background: $navHover;
+                color: $fontTextBright;
+            }
+
+            &.brand {
+                font-size: 1rem;
+                font-weight: 600;
+    
+                span {
+                    white-space: nowrap;
+                }
+            }
+        }
+        
+        img {
+            max-height: 20px;
+            max-width: 25px;
+        }
     }
 }
 
+.navigation-inner {
+    display: flex;
+    font-family: $fontPost;
+    height: 100%;
+    margin: 0 auto;
+    max-width: $pageWidth;
+    padding: 0.5rem 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toolbar-section {
+    align-items: center;
+    display: flex;
+    flex: 0 0 116px;
+    justify-content: flex-end;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $pageWidth;
+    padding: 2rem;
+
+    .small {
+        max-width: 550px;
+    }
+}
+
+.small {
+    max-width: 550px;
+}
+
 .hero {
+    padding: 1rem 0;
+
+    header {
+        padding: 2rem 0 0;
+        text-align: left;
+    }
+
     h1 {
-        color: $fontTextBright;
-        font-size: 3.2rem;
-        margin-bottom: 1rem;
+        font-size: 3rem;
+        margin-bottom: 0.75rem;
     }
 
     p {
         &.subtitle {
-            color: $fontText;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
     }
 
     .hero-buttons {
-        align-items: center;
         display: flex;
-        gap: 1rem;
+        gap: 1.5rem;
+    }
+
+    .flex-content {
+        align-items: center;
     }
 }
 
-.container {
-    &.small {
-        
+.hero-buttons {
+    a {
+        &.hero-button {
+            align-items: center;
+            border: none;
+            color: $fontTextDark;
+            display: flex;
+            font-size: 0.9rem;
+            gap: 0.4rem;
+            justify-content: space-between;
+
+            &:hover {
+                background: #00000000;
+                border: none;
+                color: $fontText;
+            }
+
+            img {
+                display: block;
+                max-height: 18px;
+            }
+        }
     }
-    .small {
-        max-width: 550px;
+}
+
+.main-image {
+    border: 1px solid $borderLight;
+    border-radius: 8px;
+    height: auto;
+    margin-left: 2rem;
+    width: 250px;
+}
+
+.footer {
+    height: $footerHeight;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: $backgroundTabs;
+
+    section {
+        align-items: stretch;
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+    }
+
+    nav {
+        display: flex;
+        gap: 0.25rem;
+        margin: 0 1rem;
+    }
+
+    span {
+        color: white;
+        align-items: center;
+        font-size: .8rem;
+        line-height: $footerHeight;
+        padding: 0 .5rem;
     }
 }

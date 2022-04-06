@@ -16,9 +16,7 @@ export default function Articles() {
             </p>
           </div>
         </header>
-        <section>
-          <div className="container">Search widget</div>
-        </section>
+        <section>cenas</section>
       </article>
     </>
   );
