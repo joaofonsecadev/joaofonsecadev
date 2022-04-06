@@ -1,11 +1,16 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React, { useMemo } from 'react';
+import { Link, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import SEO from '../components/SEO';
 import SiteConfig from '../utils/config';
 import profilePicture from '../assets/pfp.jpg';
+import { getSimplifiedPosts } from '../utils/helpers';
+import PostList from '../components/PostList';
 
-export default function WebIndex() {
+export default function WebIndex({ data }) {
+  const latest = data.latest.edges;
+  const simpleLatest = useMemo(() => getSimplifiedPosts(latest), [latest]);
+
   return (
     <>
       <Helmet title={`${SiteConfig.title} - Game Developer`} />
@@ -17,8 +22,8 @@ export default function WebIndex() {
               <div>
                 <h1>Hey, I&apos;m João.</h1>
                 <p className="subtitle small">
-                  I&apos;m a game developer from Lisbon, Portugal.
-                  Currently working as an Automation Test Engineer at Funcom, for the{' '}
+                  I&apos;m a game developer from Lisbon, Portugal. Currently working as an
+                  Automation Test Engineer at Funcom, for the{' '}
                   <a
                     href="https://pr.funcom.com/Unannounced-Dune-survival-game"
                     target="_blank"
@@ -38,7 +43,32 @@ export default function WebIndex() {
             </p>
           </div>
         </header>
+        <div className="container">
+          <h2 className="main-header">
+            <span>Latest Articles</span>
+            <Link to="/articles">View All</Link>
+          </h2>
+          <PostList data={simpleLatest} />
+        </div>
       </article>
     </>
   );
 }
+
+export const pageQuery = graphql`
+  query IndexQuery {
+    latest: allMarkdownRemark(limit: 7, sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          id
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            slug
+            tags
+          }
+        }
+      }
+    }
+  }
+`;

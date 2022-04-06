@@ -8,6 +8,8 @@ module.exports = {
   },
   rules: {
     'no-anonymous-exports-page-templates': 'warn',
+    'object-curly-newline' : 'warn',
+    'import/prefer-default-export' : 'warn',
     'limited-exports-page-templates': 'warn',
     'react/function-component-definition': 'off',
     'react/prop-types': 'warn',

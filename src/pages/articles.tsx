@@ -16,7 +16,9 @@ export default function Articles() {
             </p>
           </div>
         </header>
-        <section>cenas</section>
+        <section>
+          <div className="container" />
+        </section>
       </article>
     </>
   );

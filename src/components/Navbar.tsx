@@ -1,14 +1,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import projectsIcon from '../assets/book.png';
 import articlesIcon from '../assets/scroll.png';
 import aboutIcon from '../assets/helmet.png';
 import bookIcon from '../assets/openBook.png';
 
 const navMainItems = [
   { url: '/articles', icon: articlesIcon, label: 'Articles' },
-  { url: '/projects', icon: projectsIcon, label: 'Projects' },
   { url: '/about', icon: aboutIcon, label: 'About Me' },
 ];
 

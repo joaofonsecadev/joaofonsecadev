@@ -41,6 +41,19 @@ h1 {
     scroll-margin-top: 60px;
 }
 
+h3, h4, h5 {
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5 {
+    color: $accent;
+    font-family: $fontHeading;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0 0 1.5rem;
+    scroll-margin-top: 80px;
+}
+
 blockquote, ol, p, table, ul {
     color: $fontText;
     font-size: 1.1rem;
@@ -61,6 +74,47 @@ a {
             filter: brightness(1.1)
         }
     }
+
+    &.post {
+        grid-gap: 1rem;
+        align-items: center;
+        border: 1px solid transparent;
+        display: grid;
+        grid-template-columns: auto 60px;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding: 0.4rem 1rem;
+
+        h3 {
+            color: $fontText;
+            -webkit-filter: brightness(1);
+            filter: brightness(1);
+            font-family: $fontPost;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        time {
+            display: block;
+            font-family: $fontCode;
+            color: $fontTextDark;
+            font-size: .8rem;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        &:hover {
+            background: #00000033;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            font-family: $fontPost;
+
+            time {
+                color: $fontTextDark;
+            }
+        }
+    }
 }
 
 article {
@@ -71,6 +125,21 @@ article {
         font-size: 2.6rem;
         font-weight: 600;
         margin-bottom: 0.75rem;
+    }
+
+    h2 {
+        border-bottom: 1px solid $borderLight;
+        font-size: 2rem;
+        font-weight: 600;
+        padding-bottom: 0.25rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    h2, h3, h4, h5 {
+        margin: 0 0 1rem;
     }
 
     header {
@@ -102,11 +171,16 @@ article {
         color: $fontTextDark;
         font-size: 1.4rem;
         margin-bottom: 0;
+        line-height: 1.4;
     }
 }
 
 strong {
     font-weight: bold;
+}
+
+.flex {
+    display: flex;
 }
 
 .flex-content {
@@ -259,6 +333,17 @@ strong {
     height: auto;
     margin-left: 2rem;
     width: 250px;
+}
+
+.main-header {
+    align-items: center;
+    border-bottom: 1px solid $borderLight;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+        font-size: 1rem;
+    }
 }
 
 .footer {
